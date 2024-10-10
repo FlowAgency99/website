@@ -112,8 +112,9 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Flow | Agence Digitale Innovante</title>
-        <meta name="description" content="Flow, l'agence digitale pour des sites web modernes et performants. Offrez à votre entreprise une présence en ligne exceptionnelle." />
+      <title>Flow | Solutions Digitales</title> {/* Titre global */}
+      <meta name="description" content="Flow, l'agence digitale pour des solutions web performantes et innovantes." />
+      <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
       </Head>
 
       {/* Hero Section */}
