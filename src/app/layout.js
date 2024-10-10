@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
           <ul className="footer-legal-links">
             <li><Link href="/privacy-policy">Données personnelles</Link></li>
             <li><Link href="/legal-notice">Mentions légales</Link></li>
-            <li><Link href="/terms-of-service">Conditions d'utilisation</Link></li>
+            <li><Link href="/terms-of-service">Conditions d&apos;utilisation</Link></li>
           </ul>
         </div>
 
