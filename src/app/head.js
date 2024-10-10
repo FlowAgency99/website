@@ -1,12 +1,13 @@
-// src/app/head.js
+import Head from 'next/head';
 
-export default function Head() {
-    return (
-      <>
-        <title>Flow | Création de sites web professionnels</title>
-        <meta name="description" content="Flow, création de sites web professionnels et solutions digitales" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </>
-    );
-  }
-  
+export default function HeadComponent() {
+  return (
+    <>
+      <Head>
+        <title>Flow | Solutions Digitales</title>
+        <meta name="description" content="Description de ton site ici." />
+        <link rel="icon" href="/favicon.ico" /> {/* Lien vers ton favicon */}
+      </Head>
+    </>
+  );
+}
