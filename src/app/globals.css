@@ -1,0 +1,1424 @@
+/* src/app/globals.css */
+
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #2d2d2d;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* S'assure que les particules sont en arrière-plan */
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #1f3b73;
+}
+
+.flow-logo {
+  width: auto;
+  height: 35px;
+  padding-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .flow-logo {
+    height: 30px;
+  }
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4169e1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+nav ul li a {
+  color: #2d2d2d;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #7fa6f8;
+  color: white;
+}
+
+/* Icône du menu hamburger */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #2d2d2d;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Affiche le menu hamburger sur mobile */
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+  }
+
+  nav.active {
+    display: flex; /* Affiche le menu lors du clic sur le hamburger */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* Header amélioré */
+/* Header amélioré */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #1f3b73; /* Petite bordure bleu foncé pour plus de style */
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #4169e1;
+  border-bottom: 3px solid #7fa6f8; /* Bordure plus claire au scroll */
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4169e1; /* Toujours le bleu roi pour le logo */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #2d2d2d;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  background-color: #7fa6f8;
+  color: white;
+}
+
+/* Hero Section avec dégradé et animations */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f3b73, #4169e1); /* Dégradé subtil entre deux nuances de bleu */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* S'assure que le contenu est au-dessus des particules */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 2; /* Pour être au-dessus de l'animation */
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+.hero-title .highlight {
+  color: #00eaff; /* Bleu néon très pétant pour démarquer le texte */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-cta {
+  padding: 1rem 3rem;
+  background-color: white;
+  color: #4169e1;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+}
+
+.hero-cta:hover {
+  background-color: #7fa6f8;
+  color: white;
+  transform: translateY(-3px);
+}
+
+
+
+/* Why Us Section */
+.why-us-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+  
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-us-card {
+  background-color: #f0f4ff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.why-us-card h3 {
+  color: #2d2d2d;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-us-card p {
+  color: #666666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Process Section */
+.process-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-step {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.process-step h3 {
+  color: #1f3b73;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.process-step p {
+  color: #666666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design for Why Us and Process Sections */
+@media (max-width: 1024px) {
+  .why-us-grid, .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us-grid, .process-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .why-us-card, .process-step {
+    margin-bottom: 2rem;
+  }
+
+  .why-us-card h3, .process-step h3 {
+    font-size: 1.2rem;
+  }
+
+  .why-us-card p, .process-step p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Offres Section */
+.offers-section {
+  padding: 5rem 2rem;
+  background-color: #f0f4ff;
+  text-align: center;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.offer-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #4169e1;
+}
+
+.offer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.offer-card ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666666;
+}
+
+.offer-price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #2d2d2d;
+}
+
+.header-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  background-color: #1f3b73;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header-button:hover {
+  background-color: #122244;
+  color: rgb(255, 255, 255);
+}
+
+/* Styles pour chaque offre */
+.offer-card.standard {
+  border-top: 5px solid #4169e1;
+}
+
+.offer-card.pro {
+  border-top: 5px solid #ff6f61;
+}
+
+.offer-card.premium {
+  border-top: 5px solid #3d87f5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Global styles for sections */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2d2d2d;
+  font-weight: bold;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #ff6f61;
+  margin: 1rem auto 0;
+}
+
+/* Technologies Section */
+.technologies-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2d2d2d;
+  font-weight: bold;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Style général pour les logos SVG */
+.tech-icon {
+  width: 100px;  /* Taille par défaut */
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1); /* Effet zoom au hover */
+}
+
+/* Styles spécifiques pour chaque logo */
+.nextjs-logo {
+  width: 200px;
+  height: 100px;
+}
+
+.nodejs-logo {
+  width: 170px;
+  height: 100px;
+}
+
+.strapi-logo {
+  width: 170px;
+  height: 100px;
+}
+
+.react-logo {
+  fill: #61dafb;
+}
+
+.vercel-logo {
+  width: 200px;
+  height: 100px;
+}
+
+.mongodb-logo {
+  width: 170px;
+  height: 100px;
+}
+
+/* Responsive Styles pour petits écrans */
+@media (max-width: 768px) {
+  .tech-icon {
+    width: 80px;  /* Réduction de la taille des logos */
+    height: 80px;
+  }
+
+  .nextjs-logo {
+    width: 150px; /* Ajustement spécifique */
+    height: 80px;
+  }
+
+  .nodejs-logo {
+    width: 130px;
+    height: 80px;
+  }
+
+  .strapi-logo {
+    width: 130px;
+    height: 80px;
+  }
+  
+  .vercel-logo {
+    width: 150px; /* Ajustement spécifique */
+    height: 100px;
+  }
+  
+  .mongodb-logo {
+    width: 130px;
+    height: 80px;
+  }
+}
+
+/* Responsive Styles pour très petits écrans (smartphones) */
+@media (max-width: 480px) {
+  .tech-icon {
+    width: 60px;  /* Taille encore plus petite pour les écrans de smartphone */
+    height: 60px;
+  }
+
+  .nextjs-logo {
+    width: 100px; 
+    height: 60px;
+  }
+
+  .nodejs-logo {
+    width: 90px;
+    height: 60px;
+  }
+
+  .strapi-logo {
+    width: 90px;
+    height: 60px;
+  }
+  
+  .vercel-logo {
+    width: 100px; 
+    height: 60px;
+  }
+  
+  .mongodb-logo {
+    width: 90px;
+    height: 60px;
+  }
+  
+  
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1f3b73;
+  color: white;
+  padding: 4rem 2rem;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around; /* Espace uniformément entre les sections */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    display: block;
+  }
+}
+
+.footer-section {
+  flex: 1 1 300px; /* Ajuste la largeur minimale à 300px */
+  padding: 1rem;
+  margin-bottom: 2rem; /* Espace entre les sections */
+}
+
+.footer-section.about {
+  flex: 2 1 300px; /* Donne plus d'espace à la section about */
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #ff6f61;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer-section ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6f61;
+}
+
+/* Contact Section */
+.footer-section.contact p {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .footer-section.contact p {
+  justify-content: center;
+  }
+}
+
+
+.footer-section.contact i {
+  margin-right: 0.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem; /* Ajoute de l'espace entre les icônes */
+}
+
+.socials a {
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #ff6f61;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+
+
+/* New Dark Footer Bar for Legal Links */
+.footer-legal {
+  background-color: #2c2c2c;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.footer-legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-legal-links li {
+  display: inline-block;
+}
+
+.footer-legal-links li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-legal-links li a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+
+  .footer-legal-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-legal-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666666;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #4169e1;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #2d2d2d;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4169e1;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  background-color: #4169e1; /* Fond bleu roi par défaut */
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.cta-button:hover {
+  background-color: #122244;
+  transform: translateY(-3px);
+}
+
+/* Champ de consentement RGPD */
+.rgpd-consent {
+  display: flex;
+  align-items: center; /* Aligne la case et le texte au centre verticalement */
+  font-size: 0.9rem;
+  color: #666666;
+  margin-top: 1rem;
+  flex-wrap: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+.rgpd-consent input[type="checkbox"] {
+  margin-right: 10px; /* Ajoute de l'espace entre la case et le texte */
+  width: 20px; /* Taille de la case */
+  height: 20px; /* Taille de la case */
+}
+
+.rgpd-consent label {
+  margin: 0;
+  line-height: 1.5;
+  flex: 1; /* Permet au label de prendre l'espace restant */
+}
+
+.rgpd-consent a {
+  color: #4169e1;
+  text-decoration: underline;
+}
+
+.rgpd-consent a:hover {
+  color: #3049a6;
+}
+
+
+
+/* Responsive Design for Contact Form */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Section invisible par défaut */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Quand la section devient visible au scroll */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effet de fade-in + slide pour certaines sections */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom-in effect */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.zoom-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Style du soulignement handwriting */
+.handwriting-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.handwriting-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px; /* Ajuste cette valeur pour bien placer le soulignement sous le texte */
+  width: 100%;
+  height: 30px; /* Ajuste la hauteur en fonction de la taille de ton SVG */
+  background: url('/icons/underline.svg') no-repeat left;
+  background-size: 0 100%; /* Débute avec une largeur de 0 */
+  animation: draw-line 1.5s ease-in-out forwards;
+}
+
+@keyframes draw-line {
+  from {
+    background-size: 0 100%; /* Démarre avec une largeur de 0 */
+  }
+  to {
+    background-size: 100% 100%; /* Termine avec 100% de largeur */
+  }
+}
+
+button[type="submit"] {
+  appearance: none; /* Supprime les styles par défaut du navigateur */
+  border: none; /* Supprime les bordures par défaut */
+}
+
+.form-group textarea, /* Applique le même style à textarea et input */
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #2d2d2d;
+  font-family: 'Roboto', sans-serif; /* Même police que le reste du site */
+  background-color: #fff; /* Assure-toi que le background soit uniforme */
+}
+
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #4169e1; /* Change la couleur de la bordure au focus */
+  box-shadow: 0 0 5px rgba(65, 105, 225, 0.5); /* Effet de focus similaire */
+}
+
+/* Creative Services Section */
+.creative-services-section {
+  padding: 5rem 2rem;
+  background-color: #f8f8f8;
+  position: relative;
+  overflow: hidden; /* Assure que tout reste dans la section */
+  padding-bottom: 155px;
+}
+.creative-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.creative-item {
+  width: 45%;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  border-radius: 15px;
+}
+
+.creative-item:hover {
+  transform: translateY(-10px);
+  z-index: 3; /* Survol monte l'élément */
+}
+
+.creative-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1f3b73;
+}
+
+.creative-item p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.creative-item-left {
+  align-self: flex-start;
+  transform: translateY(30px); /* Décalage volontaire pour chevauchement */
+  z-index: 1;
+}
+
+.creative-item-right {
+  align-self: flex-end;
+  transform: translateY(-30px); /* Décalage volontaire pour chevauchement */
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .creative-item {
+    width: 100%;
+    transform: none; /* Supprime les décalages sur mobile */
+    margin-bottom: 2rem;
+  }
+
+  .creative-item-left, .creative-item-right {
+    transform: none; /* Remet tout à niveau sur mobile */
+  }
+}
+
+/* Modern Web Visual Section */
+.modern-web-visual-section {
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #1f3b73, #4169e1);
+  color: white;
+  overflow: hidden;
+}
+
+.modern-web-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Main Text */
+.text-content {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.main-subtitle {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.cta-button {
+  padding: 0.75rem 2.5rem;
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e85545;
+  transform: translateY(-5px);
+}
+
+/* Visual floating images */
+.visual-wrapper {
+  position: relative;
+  flex: 1;
+  padding: 2rem;
+}
+
+.floating-image {
+  position: relative;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Positionnement des images */
+.img-1 {
+  width: 100%; /* Image principale, grande */
+  display: block;
+  margin: 0 auto;
+  transform: rotate(-2deg);
+}
+
+
+/* Hover effect on floating images */
+.floating-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .img-1, .img-2 {
+    width: 100%;
+    transform: none; /* Supprime la rotation pour les petits écrans */
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .text-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .img-1 {
+    width: 100%;
+    
+  transform: rotate(-3deg);
+  }
+
+  .img-2 {
+    width: 50%;
+    position: absolute;
+    bottom: -20px; /* Chevauche le bas de l'image principale */
+    right: 20px; /* Ajuste pour qu'elle se trouve sur le coin droit */
+    z-index: 3;
+    transform: rotate(5deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .img-2 {
+    width: 40%;
+    bottom: -15px;
+    right: 10px;
+    z-index: 3;
+  }
+}
+
+/* Style pour la flèche */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #4169e1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none; /* Caché par défaut */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Cache l'élément visuellement */
+  pointer-events: none; /* Désactive l'interaction */
+}
+
+/* Classe `show` pour rendre la flèche visible */
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto; /* Active l'interaction */
+}
+
+/* Effet au survol */
+.scroll-to-top:hover {
+  background-color: #1f3b73;
+  transform: translateY(-3px);
+}
+
+/* Ajustement du SVG */
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #ffffff; /* Couleur de la flèche */
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    right: 1rem; /* Réduis la distance à droite */
+    bottom: 1rem; /* Réduis la distance en bas */
+  }
+  
+  .scroll-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 35px;
+    height: 35px;
+    right: 0.5rem; /* Réduis encore la distance à droite */
+    bottom: 0.5rem; /* Réduis la distance en bas pour les très petits écrans */
+  }
+  
+  .scroll-to-top svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* Amélioration du style pour la page des mentions légales */
+.legal-notice-container {
+  max-width: 900px;  /* Largeur maximale pour le texte */
+  margin: 0 auto;  /* Centre le conteneur horizontalement */
+  padding: 3rem 1.5rem;  /* Ajoute de l'espace autour du contenu */
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;  /* Alignement à gauche du texte */
+}
+
+
+
+.legal-notice-container h1 {
+  font-size: 2.5rem;
+  color: #1f3b73;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.legal-notice-container h2 {
+  font-size: 1.8rem;
+  color: #1f3b73;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-notice-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.legal-notice-container a {
+  color: #4169e1;
+  text-decoration: underline;
+}
+
+.legal-notice-container a:hover {
+  color: #122244;
+}
+
+/* Politique de confidentialité styles */
+.privacy-policy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.privacy-policy-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1f3b73;
+  margin-bottom: 2rem;
+}
+
+.privacy-section {
+  margin-bottom: 2rem;
+}
+
+.privacy-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4169e1;
+  margin-bottom: 1rem;
+}
+
+.privacy-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+
+/* Pour lier ce style à l'ensemble du design */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f3b73;
+  margin-bottom: 2rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+
+/* Conditions d'utilisation styles */
+.terms-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.terms-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1f3b73;
+  margin-bottom: 2rem;
+}
+
+.terms-section {
+  margin-bottom: 2rem;
+}
+
+.terms-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4169e1;
+  margin-bottom: 1rem;
+}
+
+.terms-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+
+/* Utilisation des classes globales pour lier le design */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f3b73;
+  margin-bottom: 2rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: center;
+}
