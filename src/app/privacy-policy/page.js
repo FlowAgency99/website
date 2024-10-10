@@ -1,40 +1,33 @@
 import Head from 'next/head';
 
-export default function PrivacyPolicy() {
+export default function TermsOfService() {
   return (
     <>
       <Head>
-        <title>Politique de Confidentialité | Flow</title>
-        <meta name="description" content="Notre politique de confidentialité pour la protection des données personnelles." />
+        <title>Conditions d&apos;Utilisation | Flow</title>
+        <meta name="description" content="Conditions d'utilisation du site Flow." />
       </Head>
 
-      <div className="privacy-policy-container">
-        <h1 className="section-title">Politique de Confidentialité</h1>
+      <div className="terms-container">
+        <h1 className="section-title">Conditions d&apos;Utilisation</h1>
         <p className="section-description">
-          Chez Flow, nous nous engageons à protéger la confidentialité et la sécurité de vos données personnelles. Cette
-          politique explique quelles informations nous collectons et comment nous les utilisons.
+          Les présentes conditions d&apos;utilisation régissent l&apos;accès et l&apos;utilisation du site Flow. En accédant au site, vous acceptez
+          de vous conformer aux présentes conditions.
         </p>
 
-        <div className="privacy-section">
-          <h2>Données collectées</h2>
+        <div className="terms-section">
+          <h2>Utilisation du site</h2>
           <p>
-            Nous collectons des informations telles que votre nom, votre adresse e-mail et votre message via notre formulaire de contact
-            pour pouvoir vous répondre.
+            Vous vous engagez à utiliser ce site dans le respect des lois en vigueur et à ne pas porter atteinte aux droits de tiers ou à
+            l&apos;intégrité du site.
           </p>
         </div>
 
-        <div className="privacy-section">
-          <h2>Utilisation des données</h2>
+        <div className="terms-section">
+          <h2>Responsabilité</h2>
           <p>
-            Les données collectées sont utilisées uniquement pour traiter vos demandes et améliorer votre expérience sur notre site.
-          </p>
-        </div>
-
-        <div className="privacy-section">
-          <h2>Vos droits</h2>
-          <p>
-            Vous avez le droit de demander l'accès, la modification ou la suppression de vos données personnelles en nous contactant
-            via l'adresse e-mail fournie sur la page Contact.
+            Flow ne saurait être tenu responsable des dommages directs ou indirects pouvant résulter de l&apos;accès ou de l&apos;utilisation du
+            site.
           </p>
         </div>
       </div>
