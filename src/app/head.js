@@ -3,11 +3,9 @@ import Head from 'next/head';
 export default function HeadComponent() {
   return (
     <>
-      <Head>
-        <title>Flow | Solutions Digitales</title>
-        <meta name="description" content="Description de ton site ici." />
-        <link rel="icon" href="/favicon.ico" /> {/* Lien vers ton favicon */}
-      </Head>
+      <title>Flow | Solutions Digitales</title> {/* Titre global */}
+      <meta name="description" content="Flow, l'agence digitale pour des solutions web performantes et innovantes." />
+      <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
     </>
   );
 }
