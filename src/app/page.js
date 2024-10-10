@@ -238,7 +238,7 @@ useEffect(() => {
         alt="Image 1" 
         className="floating-image img-1" 
         width={500} // ou la largeur appropriée
-        height={300} // ou la hauteur appropriée
+        height={500} // ou la hauteur appropriée
     />
 </div>
   </div>
