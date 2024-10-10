@@ -12,6 +12,8 @@ import StrapiLogo from './components/icons/StrapiLogo';
 import VercelLogo from './components/icons/VercelLogo';
 import MongoDBLogo from './components/icons/MongoDBLogo';
 import ParticlesBackground from './components/ParticlesBackground';
+import Image from 'next/image';
+
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false); // Déclaration de useState en dehors de useEffect
@@ -143,7 +145,7 @@ useEffect(() => {
           </div>
           <div className="why-us-card">
             <h3>Expérience utilisateur optimale</h3>
-            <p>Nous créons des interfaces intuitives pour que vos visiteurs trouvent facilement ce qu'ils cherchent et interagissent efficacement avec votre contenu.</p>
+            <p>Nous créons des interfaces intuitives pour que vos visiteurs trouvent facilement ce qu&apos;ils cherchent et interagissent efficacement avec votre contenu.</p>
           </div>
         </div>
       </section>
@@ -196,12 +198,12 @@ useEffect(() => {
   <div className="creative-content">
     <div className="creative-item creative-item-left">
       <h3>Création de logos et visuels</h3>
-      <p>Nous concevons des logos et visuels uniques qui représentent l'identité de votre marque, tout en créant des expériences graphiques qui marquent.</p>
+      <p>Nous concevons des logos et visuels uniques qui représentent l&apos;identité de votre marque, tout en créant des expériences graphiques qui marquent.</p>
     </div>
 
     <div className="creative-item creative-item-right">
       <h3>Sites flexibles et indépendants</h3>
-      <p>Chez Flow, nous privilégions des solutions sur mesure plutôt que des CMS comme WordPress.. Nos sites sont développés sur mesure, garantissant plus de flexibilité, de sécurité et d'indépendance.</p>
+      <p>Chez Flow, nous privilégions des solutions sur mesure plutôt que des CMS comme WordPress.. Nos sites sont développés sur mesure, garantissant plus de flexibilité, de sécurité et d&apos;indépendance.</p>
     </div>
 
     <div className="creative-item creative-item-left">
@@ -211,7 +213,7 @@ useEffect(() => {
 
     <div className="creative-item creative-item-right">
       <h3>Création de contenus interactifs</h3>
-      <p>Textes, images, animations, nous maîtrisons tous les aspects de la création de contenus interactifs pour maximiser l'engagement des visiteurs.</p>
+      <p>Textes, images, animations, nous maîtrisons tous les aspects de la création de contenus interactifs pour maximiser l&apos;engagement des visiteurs.</p>
     </div>
   </div>
 </section>
@@ -224,15 +226,21 @@ useEffect(() => {
       {/* Texte principal */}
       <h2 class="main-title">Votre Site, Votre Identité</h2>
       <p class="main-subtitle">
-        En 2024, un site web sur mesure est bien plus qu'une présence en ligne. C'est une extension de votre marque. Nous vous accompagnons pour créer des sites performants, modernes et 100% adaptés à vos besoins.
+        En 2024, un site web sur mesure est bien plus qu&apos;une présence en ligne. C&apos;est une extension de votre marque. Nous vous accompagnons pour créer des sites performants, modernes et 100% adaptés à vos besoins.
       </p>
       <a href="#contact" class="cta-button">Contactez-nous ➔</a>
     </div>
 
     {/* Images qui se chevauchent */}
-    <div class="visual-wrapper">
-    <img src="/icons/website_illustration.svg" alt="Image 1" className="floating-image img-1" /> 
-    </div>
+    <div className="visual-wrapper">
+    <Image 
+        src="/icons/website_illustration.svg" 
+        alt="Image 1" 
+        className="floating-image img-1" 
+        width={500} // ou la largeur appropriée
+        height={300} // ou la hauteur appropriée
+    />
+</div>
   </div>
 </section>
 
@@ -329,7 +337,7 @@ useEffect(() => {
     required
   />
   <label htmlFor="consent">
-    J'accepte que mes informations soient utilisées dans le cadre de ma demande. Consultez notre <a href="/privacy-policy" target="_blank">Politique de Confidentialité</a>.
+    J&apos;accepte que mes informations soient utilisées dans le cadre de ma demande. Consultez notre <a href="/privacy-policy" target="_blank">Politique de Confidentialité</a>.
   </label>
 </div>
 
