@@ -51,13 +51,24 @@ export default function RootLayout({ children }) {
           </span>
           <nav className={menuOpen ? 'active' : ''}>
   <ul>
-    <li><a href="#hero" onClick={() => setMenuOpen(false)}>Accueil</a></li>
-    <li><a href="#why-us" onClick={() => setMenuOpen(false)}>Pourquoi Nous</a></li>
-    <li><a href="#process" onClick={() => setMenuOpen(false)}>Processus</a></li>
-    <li><a href="#offers" onClick={() => setMenuOpen(false)}>Nos Offres</a></li>
-    <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+    <li>
+      <Link href="/#hero" onClick={() => setMenuOpen(false)}>Accueil</Link>
+    </li>
+    <li>
+      <Link href="/#why-us" onClick={() => setMenuOpen(false)}>Pourquoi Nous</Link>
+    </li>
+    <li>
+      <Link href="/#process" onClick={() => setMenuOpen(false)}>Processus</Link>
+    </li>
+    <li>
+      <Link href="/#offers" onClick={() => setMenuOpen(false)}>Nos Offres</Link>
+    </li>
+    <li>
+      <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+    </li>
   </ul>
 </nav>
+
 
         </header>
 
