@@ -40,22 +40,25 @@ export default function RootLayout({ children }) {
       <body>
         {/* Navbar */}
         <header className="navbar">
-          <div className="logo">
-            <FlowLogo />  {/* Logo de Flow */}
-          </div>
+        <div className="logo">
+    <Link href="/">
+        <FlowLogo />
+    </Link>
+  </div>
 
           <span className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             ☰ {/* Icône du menu hamburger */}
           </span>
           <nav className={menuOpen ? 'active' : ''}>
-            <ul>
-              <li><Link href="/#hero">Accueil</Link></li>
-              <li><Link href="/#why-us">Pourquoi Flow</Link></li>
-              <li><Link href="/#process">Processus</Link></li>
-              <li><Link href="/#offers">Nos Offres</Link></li>
-              <li><Link href="/#contact">Contact</Link></li>
-            </ul>
-          </nav>
+  <ul>
+    <li><a href="#hero" onClick={() => setMenuOpen(false)}>Accueil</a></li>
+    <li><a href="#why-us" onClick={() => setMenuOpen(false)}>Pourquoi Nous</a></li>
+    <li><a href="#process" onClick={() => setMenuOpen(false)}>Processus</a></li>
+    <li><a href="#offers" onClick={() => setMenuOpen(false)}>Nos Offres</a></li>
+    <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+  </ul>
+</nav>
+
         </header>
 
         {/* Contenu de la page */}
