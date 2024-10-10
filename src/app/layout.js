@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';  // Import de useState et useEffect
 import FlowLogo from './components/icons/FlowLogo';  // Import du logo pour la navbar
 import FlowLogoFooter from './components/icons/FlowLogoFooter';  // Import du logo pour le footer
 import Link from 'next/link';  // Utilise Link de Next.js pour une navigation fluide
+import Head from 'next/head';
 
 export default function RootLayout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);  // Gestion de l'état du menu hamburger
@@ -37,6 +38,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="fr">
+    <Head>
+      <title>Flow | Solutions Digitales</title> {/* Titre global */}
+      <meta name="description" content="Flow, l'agence digitale pour des solutions web performantes et innovantes." />
+      <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
+    </Head>
       <body>
         {/* Navbar */}
         <header className="navbar">
